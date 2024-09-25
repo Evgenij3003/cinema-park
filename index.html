@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Cinema Park. Unsubscribe</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+
+    <div class="wrapper page-unsubscribe">
+
+        <!-- Content -->
+        <main class="content">
+
+            <!-- Main -->
+            <div class="main-unsubscribe">
+                <div class="main-unsubscribe__bg">
+                    <picture>
+                        <source media="(max-width: 25.06125em)" srcset="img/bg-mobile.jpg">
+                        <img class="image-cover" src="img/bg.jpg" alt="фоновое изображение">
+                    </picture>
+                </div>
+                <div class="main-unsubscribe__container">
+                    <div class="main-unsubscribe__body">
+                        <div class="main-unsubscribe__section">
+                            <div class="main-unsubscribe__logo">
+                                <img src="img/logo.svg" alt="логотип Cinema Park">
+                            </div>
+
+                            <!-- State 1 -->
+                            <div class="main-unsubscribe__content content--main">
+                                <div class="main-unsubscribe__title">
+                                    <h1>Может быть, вы передумаете? ;(</h1>
+                                </div>
+                                <div class="main-unsubscribe__text">
+                                    <p>Ради вас мы готовы на многое - может промокод исправит ситуацию?</p>
+                                </div>
+                                <div class="main-unsubscribe__promocode">cinemapart2</div>
+                                <div class="main-unsubscribe__buttons">
+                                    <button class="button" data-button-stay>Остаться</button>
+                                    <button class="button button--outline" data-button-unsubscribe>Отписаться</button>
+                                </div>
+                            </div>
+
+                            <!-- State 2. Stay  -->
+                            <div class="main-unsubscribe__content content--stay hide">
+                                <div class="main-unsubscribe__title">
+                                    <h1>Спасибо, что остались с нами!</h1>
+                                </div>
+                                <div class="main-unsubscribe__text">
+                                    <p>Помогите нам стать лучше</p>
+                                </div>
+                                <form action="#" class="main-unsubscribe__form form-unsubscribe">
+                                    <div class="form-unsubscribe__radios radio">
+                                        <div class="radio__options">
+                                            <div class="radio__option">
+                                                <input id="frequentSupport" checked type="radio" value="frequent" name="formSupport">
+                                                <label for="frequentSupport">
+                                                    <span>Письма приходят слишком часто</span>
+                                                </label>
+                                            </div>
+                                            <div class="radio__option">
+                                                <input id="bigPremieresSupport" type="radio" value="bigPremieres" name="formSupport">
+                                                <label for="bigPremieresSupport">
+                                                    <span>В ожидании более громких кинопремьер</span>
+                                                </label>
+                                            </div>
+                                            <div class="radio__option">
+                                                <input id="otherCinemaSupport" type="radio" value="otherCinema" name="formSupport">
+                                                <label for="otherCinemaSupport">
+                                                    <span>Я полюбил другой кинотеатр</span>
+                                                </label>
+                                            </div>
+                                            <div class="radio__option">
+                                                <input id="spamSupport" type="radio" value="spam" name="formSupport">
+                                                <label for="spamSupport">
+                                                    <span>Это спам</span>
+                                                </label>
+                                            </div>
+                                            <div class="radio__option">
+                                                <input id="mailCleaningSupport" type="radio" value="mailCleaning" name="formSupport">
+                                                <label for="mailCleaningSupport">
+                                                    <span>Ретроградный меркурий в «Шрэке», решил почистить почту</span>
+                                                </label>
+                                            </div>
+                                            <div class="radio__option">
+                                                <input id="otherReasonSupport" type="radio" value="otherReason" name="formSupport">
+                                                <label for="otherReasonSupport">
+                                                    <span>Другая причина</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-unsubscribe__textarea">
+                                        <textarea name="formSupportMessage" placeholder="Укажите причину" data-required></textarea>
+                                        <span class="error" hidden>Вы не указали причину</span>
+                                    </div>
+                                    <div class="form-unsubscribe__buttons">
+                                        <button type="submit" class="button">Отправить</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <!-- State 3. Unsubscribe -->
+                            <div class="main-unsubscribe__content content--unsubscribe hide">
+                                <div class="main-unsubscribe__title">
+                                    <h1>Вот и всё... 
+                                        <span>Вы успешно отписаны</span>
+                                    </h1>
+                                </div>
+                                <div class="main-unsubscribe__text">
+                                    <p>Похоже вам не понравились наши последние рассылки. </p>
+                                    <p>Поделитесь, пожалуйста, почему?</p>
+                                </div>
+                                <form action="#" class="main-unsubscribe__form form-unsubscribe">
+                                    <div class="form-unsubscribe__radios radio">
+                                        <div class="radio__options">
+                                            <div class="radio__option">
+                                                <input id="frequent" checked type="radio" value="frequent" name="formUnsubscribe">
+                                                <label for="frequent">
+                                                    <span>Письма приходят слишком часто</span>
+                                                </label>
+                                            </div>
+                                            <div class="radio__option">
+                                                <input id="bigPremieres" type="radio" value="bigPremieres" name="formUnsubscribe">
+                                                <label for="bigPremieres">
+                                                    <span>В ожидании более громких кинопремьер</span>
+                                                </label>
+                                            </div>
+                                            <div class="radio__option">
+                                                <input id="otherCinema" type="radio" value="otherCinema" name="formUnsubscribe">
+                                                <label for="otherCinema">
+                                                    <span>Я полюбил другой кинотеатр</span>
+                                                </label>
+                                            </div>
+                                            <div class="radio__option">
+                                                <input id="spam" type="radio" value="spam" name="formUnsubscribe">
+                                                <label for="spam">
+                                                    <span>Это спам</span>
+                                                </label>
+                                            </div>
+                                            <div class="radio__option">
+                                                <input id="mailCleaning" type="radio" value="mailCleaning" name="formUnsubscribe">
+                                                <label for="mailCleaning">
+                                                    <span>Ретроградный меркурий в «Шрэке», решил почистить почту</span>
+                                                </label>
+                                            </div>
+                                            <div class="radio__option">
+                                                <input id="otherReason" type="radio" value="otherReason" name="formUnsubscribe">
+                                                <label for="otherReason">
+                                                    <span>Другая причина</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-unsubscribe__textarea">
+                                        <textarea name="formUnsubscribeMessage" placeholder="Укажите причину" data-required></textarea>
+                                        <span class="error" hidden>Вы не указали причину</span>
+                                    </div>
+                                    <div class="form-unsubscribe__buttons">
+                                        <button type="submit" class="button">Отправить</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+
+    <script src="js/script.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,683 @@
+/*==========================================================================================================================================================================*/
+/* Подключение шрифтов */
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/Roboto.woff2") format("woff2"),
+         url("../fonts/Roboto.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Fira Sans";
+    src: url("../fonts/FiraSans-Regular.woff2") format("woff2"),
+         url("../fonts/FiraSans-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Fira Sans";
+    src: url("../fonts/FiraSans-SemiBold.woff2") format("woff2"),
+         url("../fonts/FiraSans-SemiBold.woff") format("woff");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+/*==========================================================================================================================================================================*/
+/* Обнуление */
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    width: 100%;
+    font-size: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body:has(.page-unsubscribe) {
+    background-color: #000;
+}
+
+body::-webkit-scrollbar {
+    width: 0.375rem;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #000;
+}
+
+body::-webkit-scrollbar-thumb {                                                 /* Ползунок Скроллбара. */
+    background-color: rgba(253, 0, 23, 0.9);
+    border-radius: 1.25rem;
+}
+
+/* Для Firefox */
+.body {
+    scrollbar-color: rgba(253, 0, 23, 0.9) transparent;                                             /* Цвет для ползунка скроллбара и полосы прокрутки. */
+    scrollbar-width: thin;                                                              /* Ширина ползунка скроллбара. */
+}
+
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+
+input,
+button,
+textarea {
+    font-family: inherit;
+    outline: none;
+    border: none;
+}
+
+input,
+button,
+textarea {
+    font-family: "Mail Sans Roman", sans-serif;
+    font-size: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+a,
+button {
+    color: inherit;
+    cursor: pointer;
+    border: none;
+}
+
+button {
+    background: none;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+    border: 0;
+    height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+:focus,
+:active,
+a:focus,
+a:active {
+    outline: none;
+}
+
+a,
+a:visited,
+a:hover {
+    text-decoration: none;
+}
+
+
+
+/*==========================================================================================================================================================================*/
+/* Общие стили */
+.page-unsubscribe.wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-family: "Fira Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.21;
+    color: #fff;
+    background-color: #000;
+    overflow: hidden;
+    opacity: 0;
+    animation: page-unsubscribe_show 0.5s forwards linear;
+}
+
+@keyframes page-unsubscribe_show {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.page-unsubscribe.wrapper > * {
+    min-width: 0;
+}
+
+.page-unsubscribe [class*=__container] {
+    box-sizing: content-box;
+    max-width: 70.5rem;
+    margin: 0 auto;
+    padding: 0 5rem;
+}
+
+.page-unsubscribe .content {
+    flex: 1 1 auto;
+}
+
+
+/*=====================================================================================*/
+/* Media Queries */
+@media (max-width: 63.9988em) {
+    .page-unsubscribe [class*=__container] {
+        padding: 0 2rem;
+    }
+}
+
+@media (max-width: 47.9988em) {
+    .page-unsubscribe [class*=__container] {
+        padding: 0 1rem;
+    }
+}
+
+
+
+/*==========================================================================================================================================================================*/
+/* Модификаторы */
+.page-unsubscribe .button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 8rem;
+    min-height: 3.1875rem;
+    border-radius: 2.75rem;
+    padding: 1rem 1.25rem;
+    font-family: "Roboto", sans-serif;
+    color: #fff;
+    background: linear-gradient(45deg, #f5008f 0%, #fd0017 50%, #f7a460 100%);
+    background-size: 200%;
+    transition: color 0.3s ease, background-color 0.3s ease, background-position 0.5s ease;
+}
+
+.page-unsubscribe .button--outline {
+    border: 1px solid #fff;
+    background: none;
+    background-color: #000;
+}
+
+.page-unsubscribe .image-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/*=====================================================================================*/
+/* Media Queries */
+@media (any-hover: hover) and (any-pointer: fine) {
+    .page-unsubscribe .button:hover {
+        background-position: right;
+    }
+
+    .page-unsubscribe .button--outline:hover {
+        color: #000;
+        background-color: #fff;
+    }
+}
+
+
+
+/*=============================================================================   INPUT   ==================================================================================*/
+/* Input */
+.page-unsubscribe textarea {
+    max-width: 29.5625rem;
+    width: 100%;
+    height: 6.3125rem;
+    margin: 1.125rem 0 0;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    border: 1px solid #c6cad8;
+    color: #fff;
+    background-color: transparent;
+    resize: none;
+    display: none;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.page-unsubscribe textarea.input-error {
+    border-color: red;
+    box-shadow: inset 0 0 0.3125rem red;
+}
+
+.page-unsubscribe textarea::placeholder {
+    color: #fff;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+.page-unsubscribe textarea:focus::placeholder {
+    opacity: 0.2;
+}
+
+.error {
+    position: absolute;
+    bottom: -0.875rem;
+    left: 3.25rem;
+    color: #fd0017;
+    font-size: 0.75rem;
+    animation: error_show 0.25s forwards linear;
+}
+
+@keyframes error_show {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.error[hidden] {
+    opacity: 0;
+}
+
+
+/*=============================================================================*/
+/* Media Queries */
+@media (max-width: 47.9988em) {
+    .page-unsubscribe textarea {
+        max-width: calc(100% - 4.6875rem);
+        margin: 0.75rem 0 0;
+        font-size: 0.875rem;
+    }
+
+    .page-unsubscribe textarea::placeholder {
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 29.9988em) {
+    .error {
+        font-size: 0.625rem;
+    }
+}
+
+
+
+/*==================================================================================   RADIO   =============================================================================*/
+/* Radio */
+.radio__options {
+    display: grid;
+    row-gap: 0.75rem;
+    text-align: left;
+}
+
+.radio__option {
+    min-height: 1.375rem;
+}
+
+.radio__option input {
+    display: none;
+}
+
+.radio__option label {
+    position: relative;
+    display: inline-flex;
+    font-size: 1.125rem;
+    line-height: 1.1;
+    color: #fff;
+    cursor: pointer;
+}
+
+.radio__option span {
+    padding: 0 0 0 2.5rem;
+    opacity: 0.7;
+    transition: opacity 0.25s ease;
+}
+
+.radio__option label::before,
+.radio__option label::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+
+.radio__option label::before {
+    top: -0.0625rem;
+    left: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    border: 0.0625rem solid #fff;
+    outline: 0.0625rem solid transparent;
+    outline-offset: -0.125rem;
+    transition: outline-color 0.25s ease;
+}
+
+.radio__option label::after {
+    top: 0.25rem;
+    left: 0.3125rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    background-color: #00dced;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+}
+
+.radio__option input:checked + label::before {
+    outline-color: #fff;
+}
+
+.radio__option input:checked + label::after {
+    transform: scale(1);
+}
+
+.radio__option input:checked + label span {
+    opacity: 1;
+}
+
+
+/*=============================================================================*/
+/* Media Queries */
+@media (max-width: 47.9988em) {
+    .radio__option label {
+        font-size: 1rem;
+    }
+}
+
+
+
+/*==========================================================================================================================================================================*/
+/* Main */
+.main-unsubscribe {
+    position: relative;
+    display: flex;
+    min-height: 100vh;
+}
+
+.main-unsubscribe__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.main-unsubscribe__bg img {
+    min-height: 67.5rem;
+}
+
+.main-unsubscribe__container {
+    width: 100%;
+}
+
+.main-unsubscribe__body {
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+.main-unsubscribe__section {
+    position: relative;
+    max-width: 46.5rem;
+    width: 100%;
+    padding: 8.625rem 0 2.5rem;
+    text-align: center;
+}
+
+.main-unsubscribe__logo {
+    margin: 0 auto;
+    width: 20.3125rem;
+}
+
+.main-unsubscribe__logo img {
+    width: 100%;
+}
+
+.main-unsubscribe__content {
+    margin: 7.25rem 0 0;
+    transition: opacity 0.25s ease;
+}
+
+.main-unsubscribe__content.hide {
+    opacity: 0;
+}
+
+.main-unsubscribe__title {
+    margin: 0 0 3.625rem;
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.main-unsubscribe__title span {
+    display: block;
+    font-size: 2.25rem;
+}
+
+.main-unsubscribe__text {
+    max-width: 42ch;
+    margin: 0 auto 3rem;
+    font-size: 1.5rem;
+}
+
+.main-unsubscribe__promocode {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 5.5625rem;
+    margin: 0 0 4.25rem;
+    padding: 0.75rem 3.8125rem;
+    border-radius: 3.125rem;
+    border: 0.125rem dashed #00dced;
+    font-size: 3.375rem;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.main-unsubscribe__buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.form-unsubscribe {
+    max-width: 34.5625rem;
+    margin: 0 auto;
+    width: 100%;
+} 
+
+.form-unsubscribe__textarea {
+    position: relative;
+}
+
+.form-unsubscribe__buttons {
+    margin: 3rem 0 0;
+}
+
+
+/*=====================================================================================*/
+/* State 2. Stay */
+.content--stay .main-unsubscribe__title {
+    margin: 0 auto 1.125rem;
+}
+
+
+/*=====================================================================================*/
+/* State 3. Unsubscribe */
+.content--unsubscribe {
+    margin: 3.25rem 0 0;
+} 
+
+.content--unsubscribe .main-unsubscribe__title {
+    position: relative;
+    margin: 0 auto 3.375rem;
+    padding: 2.625rem 1.5rem;
+    border: 0.0625rem solid rgba(255, 255, 255, 0.15);
+    border-radius: 2.5rem;
+    -webkit-backdrop-filter: blur(1.5rem);
+    backdrop-filter: blur(1.5rem);
+    background-color: rgba(35, 35, 35, 0.3);
+}
+
+
+/*=====================================================================================*/
+/* State 2,3 */
+.content--stay,
+.content--unsubscribe {
+    opacity: 0;
+    display: none;
+    animation: content_show 0.2s forwards linear;
+}
+
+@keyframes content_show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.content--stay .main-unsubscribe__text,
+.content--unsubscribe .main-unsubscribe__text {
+    max-width: 100%;
+    margin: 0 auto 1.875rem;
+}
+
+
+/*=====================================================================================*/
+/* Media Queries */
+@media (max-width: 75em) {
+    .main-unsubscribe__title {
+        font-size: calc(1.875rem + 18 * ((100vw - 23.4375rem) / (1200 - 375)));
+    }
+
+    .main-unsubscribe__title span {
+        font-size: calc(1.5625rem + 11 * ((100vw - 23.4375rem) / (1200 - 375)));
+    }
+
+    .main-unsubscribe__text {
+        font-size: calc(1.125rem + 6 * ((100vw - 23.4375rem) / (1200 - 375)));
+    }
+}
+
+@media (max-width: 63.9988em) {
+    .main-unsubscribe__section {
+        max-width: 100%;
+        padding: 3.75rem 0 2.5rem;
+    }
+}
+
+@media (max-width: 47.9988em) {
+    .main-unsubscribe__logo {
+        width: 16.4375rem;
+    }
+
+    .main-unsubscribe__content {
+        margin: 8.75rem 0 0;
+    }
+
+    .main-unsubscribe__title {
+        max-width: 24ch;
+        margin: 0 auto 2.375rem;
+    }
+
+    .main-unsubscribe__title span {
+        margin: 0.3125rem 0 0;
+    }
+
+    .main-unsubscribe__text {
+        margin: 0 auto 1.75rem;
+    }
+
+    .main-unsubscribe__promocode {
+        min-height: 4.1875rem;
+        margin: 0 0 2.5rem;
+        padding: 0.5625rem 3rem;
+        border-radius: 2.375rem;
+        border: 0.0938rem dashed #00dced;
+        font-size: 2.5rem;
+    }
+
+    .content--stay {
+        margin: 4.25rem 0 0;
+    }
+
+    .content--stay .main-unsubscribe__title {
+        margin: 0 auto 0.75rem;
+    }
+
+    .content--unsubscribe {
+        margin: 2.5rem 0 0;
+    } 
+
+    .content--unsubscribe .main-unsubscribe__title {
+        margin: 0 auto 1.875rem;
+        padding: 2.1875rem 0.9375rem;
+        border-radius: 1.875rem;
+    }
+
+    .content--stay .main-unsubscribe__text,
+    .content--unsubscribe .main-unsubscribe__text {
+        margin: 0 auto 1.5625rem;
+    }
+
+    .form-unsubscribe__buttons {
+        margin: 2.5rem 0 0;
+    }
+}
+
+@media (max-width: 25.0613em) {
+    .main-unsubscribe__bg img {
+        min-height: 50.75rem;
+    }
+}
+
+@media (max-width: 23.375em) {
+    .main-unsubscribe__promocode {
+        zoom: 0.8;
+    }
+}
