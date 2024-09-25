@@ -489,11 +489,26 @@ a:hover {
 }
 
 .radio__option span {
+    position: relative;
     padding: 0 0 0 2.5rem;
     opacity: 0.7;
     -webkit-transition: opacity 0.25s ease;
     -o-transition: opacity 0.25s ease;
     transition: opacity 0.25s ease;
+}
+
+.radio__option span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 1px;
+    width: 18px;
+    height: 18px;
+    border: 0.0625rem solid transparent;	
+    border-radius: 50%;
+    -webkit-transition: border-color 0.25s ease;
+    -o-transition: border-color 0.25s ease;
+    transition: border-color 0.25s ease;
 }
 
 .radio__option label::before,
@@ -510,11 +525,6 @@ a:hover {
     height: 1.25rem;
     border-radius: 50%;
     border: 0.0625rem solid #fff;
-    outline: 0.0625rem solid transparent;
-    outline-offset: -0.125rem;
-    -webkit-transition: outline-color 0.25s ease;
-    -o-transition: outline-color 0.25s ease;
-    transition: outline-color 0.25s ease;
 }
 
 .radio__option label::after {
@@ -533,8 +543,8 @@ a:hover {
     transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
-.radio__option input:checked + label::before {
-    outline-color: #fff;
+.radio__option input:checked + label span::before {
+    border-color: #fff;
 }
 
 .radio__option input:checked + label::after {
